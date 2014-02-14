@@ -1,5 +1,6 @@
 <%= form_tag search_by_choice_path  do %>
-  Search by category <%= text_field_tag  "search_category" %>
-  Search by buisness <%= text_field_tag  "search_business" %>
+  Search by category <%= text_field_tag  "search_category" %><br/>
+  Search by buisness <%= text_field_tag  "search_business" %><br/>
+  Search By City<%= text_field_tag "city" %><br/>
   <%= submit_tag "Search"  %>
 <% end %>
