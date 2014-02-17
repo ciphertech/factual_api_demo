@@ -1,0 +1,5 @@
+<%= form_tag "/create_comment" do %>
+  <%= text_area_tag "comment" ,nil, :placeholder=>"Enter comment here" %>
+  <%= hidden_field_tag "id", locals[:id] %><br/>
+  <%= submit_tag "Add Comment" %>
+<% end %>

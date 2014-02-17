@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  factual_data_id: 1
+  category_labels: MyString
+
+two:
+  factual_data_id: 1
+  category_labels: MyString

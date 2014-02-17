@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
 gem 'sqlite3'
+gem 'acts_as_commentable'
 gem 'therubyracer'
 gem 'execjs'
 gem 'factual-api'

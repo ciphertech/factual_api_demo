@@ -1,0 +1,20 @@
+<h4><%= flash[:notice] if flash[:notice].present? %> </h4>
+<br/>
+<% search = @search_result %>
+<b>Name</b> <%= search.name %><br>
+<b>Address</b> <%= search.address %><br/>
+<b>Locality</b> <%= search.locality %><br/>
+<b>Country</b> <%= search.country %><br/>
+<b> Website </b><%= link_to search.name,search.website %><br/>
+<b>Post Code</b> <%= search.postal_code %><br/>
+<b> Categories </b><% categories(search).flatten.each do |category| %>
+  <%= category.category_labels %><br/>
+<% end %>
+<br/>
+<br/>
+<hr/>
+<%= render "create_comment" , :locals=>{:id => search.id}%>
+<hr/>
+<%= render "display_comments" %>
+<br/>
+<%= link_to "Back" ,:back %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  factual_data_id: 1
+  comment_text: MyText
+
+two:
+  factual_data_id: 1
+  comment_text: MyText

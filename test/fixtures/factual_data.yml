@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  address: MyText
+  locality: MyString
+  country: MyString
+  website: MyString
+  postal_code: MyString
+
+two:
+  name: MyString
+  address: MyText
+  locality: MyString
+  country: MyString
+  website: MyString
+  postal_code: MyString
