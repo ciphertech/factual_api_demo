@@ -8988,3 +8988,773 @@ Started GET "/" for 127.0.0.1 at 2014-02-17 14:36:36 +0530
 Processing by SearchesController#search_text as HTML
   Rendered searches/search_text.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-17 15:07:03 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchesController#search_text as HTML
+  Rendered searches/search_text.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 81ms (Views: 65.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:07:04 +0530
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:07:30 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (2.0ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 1226ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:07:33 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[35mFactualData Load (0.3ms)[0m  SELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (42.6ms)[0m  INSERT INTO "factual_data" ("address", "country", "created_at", "locality", "name", "postal_code", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["address", "Kuipersdijk 3"], ["country", "nl"], ["created_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00], ["locality", "CA"], ["name", "Al Capone's"], ["postal_code", 7512], ["updated_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00]]
+  [1m[36m (111.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("category_labels", "created_at", "factual_data_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_labels", "Social"], ["created_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00], ["factual_data_id", 4], ["updated_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00]]
+  [1m[36m (103.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("category_labels", "created_at", "factual_data_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_labels", "Food and Dining"], ["created_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00], ["factual_data_id", 4], ["updated_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00]]
+  [1m[36m (105.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("category_labels", "created_at", "factual_data_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_labels", "Restaurants"], ["created_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00], ["factual_data_id", 4], ["updated_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00]]
+  [1m[36m (197.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "categories" ("category_labels", "created_at", "factual_data_id", "updated_at") VALUES (?, ?, ?, ?)  [["category_labels", "Pizza"], ["created_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00], ["factual_data_id", 4], ["updated_at", Mon, 17 Feb 2014 09:37:35 UTC +00:00]]
+  [1m[36m (456.3ms)[0m  [1mcommit transaction[0m
+  Rendered searches/_display.html.erb (1.4ms)
+  Rendered searches/_create_comment.html.erb (1.3ms)
+  Rendered searches/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 2548ms (Views: 10.7ms | ActiveRecord: 1020.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+Processing by SearchesController#search_text as HTML
+  Rendered searches/search_text.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:00 +0530
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:08:05 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"Social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (0.6ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1040ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:06 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:08:07 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[35mFactualData Load (0.4ms)[0m  SELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered searches/_display.html.erb (1.3ms)
+  Rendered searches/_create_comment.html.erb (0.6ms)
+  Rendered searches/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 1161ms (Views: 9.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:09 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:08:41 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[36mFactualData Load (0.3ms)[0m  [1mSELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered searches/_display.html.erb (0.6ms)
+  Rendered searches/_create_comment.html.erb (0.3ms)
+  Rendered searches/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 1233ms (Views: 5.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:43 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:46 +0530
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:08:49 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"Social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (0.6ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1144ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:50 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:08:51 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[35mFactualData Load (0.3ms)[0m  SELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered searches/_display.html.erb (1.1ms)
+  Rendered searches/_create_comment.html.erb (0.7ms)
+  Rendered searches/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1193ms (Views: 9.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:08:52 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:10:43 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[36mFactualData Load (0.4ms)[0m  [1mSELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered searches/_display.html.erb (1.4ms)
+  Rendered searches/_create_comment.html.erb (0.6ms)
+  Rendered searches/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1207ms (Views: 8.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:45 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:49 +0530
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:10:52 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"Social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (0.6ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1045ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:53 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:10:55 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[35mFactualData Load (0.4ms)[0m  SELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered searches/_display.html.erb (1.1ms)
+  Rendered searches/_create_comment.html.erb (0.5ms)
+  Rendered searches/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1122ms (Views: 8.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:56 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:56 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:56 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:57 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:57 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:10:57 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:57 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:10:57 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:02 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+Processing by SearchesController#search_text as HTML
+  Rendered searches/search_text.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:28 +0530
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:11:32 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"Social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (0.6ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1127ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:34 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:11:35 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[36mFactualData Load (0.3ms)[0m  [1mSELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered searches/_display.html.erb (1.1ms)
+  Rendered searches/_create_comment.html.erb (0.5ms)
+  Rendered searches/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1100ms (Views: 9.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:36 +0530
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:11:54 +0530
+
+
+Started GET "/show/Social/Al%20Capone's/7512%20CA" for 127.0.0.1 at 2014-02-17 15:11:56 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Social", "search_business"=>"Al Capone's", "city"=>"7512 CA"}
+  [1m[35mFactualData Load (0.3ms)[0m  SELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered searches/_display.html.erb (1.4ms)
+  Rendered searches/_create_comment.html.erb (1.0ms)
+  Rendered searches/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 1011ms (Views: 7.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:13:15 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"Social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (16.6ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (17.6ms)
+Completed 500 Internal Server Error in 1147ms
+
+ActionView::Template::Error (undefined local variable or method `seach' for #<#<Class:0x007f2f5c8a48b8>:0x007f2f5c8b7bc0>):
+    10:       <%= category %><br/>
+    11:     <% end %>
+    12:     <% if request_by_search_by_choice(params[:action]) %>
+    13:       <%= link_to "Show Details" , "/show/#{search["category_labels"].flatten.last}/#{search["name"]}/#{search["postcode"]}/#{seach["locality"]}"%>
+    14:     <% end %>
+    15:     <br/>
+    16:     <br/><br/>
+  app/views/searches/_display.html.erb:13:in `block in _app_views_searches__display_html_erb___4336241256905693499_69920696441140'
+  app/views/searches/_display.html.erb:2:in `each'
+  app/views/searches/_display.html.erb:2:in `_app_views_searches__display_html_erb___4336241256905693499_69920696441140'
+  app/views/searches/search_by_choice.html.erb:1:in `_app_views_searches_search_by_choice_html_erb__4547225812923329978_44614820'
+
+
+  Rendered /home/chaitali/.rvm/gems/ruby-2.0.0-p247@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/chaitali/.rvm/gems/ruby-2.0.0-p247@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/chaitali/.rvm/gems/ruby-2.0.0-p247@rails4/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started POST "/search_by_choice" for 127.0.0.1 at 2014-02-17 15:13:39 +0530
+Processing by SearchesController#search_by_choice as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IAhej2bO3fmD8hq+V4a2ou9REqZ23FedOYDK9/gmkEI=", "search_category"=>"Social", "search_business"=>"", "city"=>"CA", "commit"=>"Search"}
+  Rendered searches/_display.html.erb (1.5ms)
+  Rendered searches/search_by_choice.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6328ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:45 +0530
+
+
+Started GET "/show/Pizza/Al%20Capone's/7512%20CA/CA" for 127.0.0.1 at 2014-02-17 15:13:48 +0530
+Processing by SearchesController#show as HTML
+  Parameters: {"search_category"=>"Pizza", "search_business"=>"Al Capone's", "city"=>"7512 CA", "locality"=>"CA"}
+  [1m[36mFactualData Load (0.2ms)[0m  [1mSELECT "factual_data".* FROM "factual_data" WHERE "factual_data"."name" = 'Al Capone''s' AND "factual_data"."address" = 'Kuipersdijk 3' AND "factual_data"."locality" = 'CA' AND "factual_data"."country" = 'nl' AND "factual_data"."website" IS NULL AND "factual_data"."postal_code" = 7512 ORDER BY "factual_data"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Social' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Food and Dining' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Restaurants' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."category_labels" = 'Pizza' AND "categories"."factual_data_id" = 4 ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered searches/_display.html.erb (0.6ms)
+  Rendered searches/_create_comment.html.erb (0.3ms)
+  Rendered searches/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1345ms (Views: 5.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/searches.css?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
+
+
+Started GET "/assets/searches.js?body=1" for 127.0.0.1 at 2014-02-17 15:13:49 +0530
