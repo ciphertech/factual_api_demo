@@ -32,7 +32,7 @@ class SearchesController < ApplicationController
   def show
     factual = call_factual()
     if params[:search_category].present? &&  params[:search_business].present?
-      @search_result= factual.table("places").filters("$and"=>[{"category_labels"=>{"$includes_any"=>[params[:search_category]]}},{"name"=>params[:search_business]}],"$or"=>[{"locality"=>params[:city]},{"postcode"=>params[:city]}]).rows
+      @search_result= factual.table("places").filters("$and"=>[{"category_labels"=>{"$includes_any"=>[params[:search_category]]}},{"name"=>params[:search_business]}],"$or"=>[{"locality"=>params[:city]},{"postcode"=>params[:city]}]).rows.first
       @id = FactualData.dump_data(@search_result)
       flash[:notice]= ""
     else

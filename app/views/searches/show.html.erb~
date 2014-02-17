@@ -1,0 +1,4 @@
+<%= render "display" %>
+<hr/>
+<%= render "create_comment" , :locals=>{:id => @id} %>
+
