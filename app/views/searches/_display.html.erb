@@ -10,7 +10,7 @@
       <%= category %><br/>
     <% end %>
     <% if request_by_search_by_choice(params[:action]) %>
-      <%= link_to "Show" , "/show/#{search["category_labels"].flatten.first}/#{search["name"]}/#{search["postcode"]}"%>
+      <%= link_to "Show Details" , "/show/#{search["category_labels"].flatten.first}/#{search["name"]}/#{search["postcode"]}"%>
     <% end %>
     <br/>
     <br/><br/>
